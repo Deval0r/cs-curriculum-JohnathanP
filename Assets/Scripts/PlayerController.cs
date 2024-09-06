@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
     float xspeed;
     float xdirection;
     float xvector;
+    float yspeed;
+    float ydirection;
+    float yvector;
 
     public bool overworld; 
 
@@ -15,9 +18,12 @@ public class PlayerController : MonoBehaviour
     {
         GetComponentInChildren<TopDown_AnimatorController>().enabled = overworld;
         GetComponentInChildren<Platformer_AnimatorController>().enabled = !overworld; //what do you think ! means?
-        xspeed = 1;
+        xspeed = 4;
         xdirection = 0;
         xvector = 0;
+        yspeed = 4;
+        ydirection = 0;
+        yvector = 0;
         
         if (overworld)
         {
@@ -31,9 +37,20 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-       xdirection = Input.GetAxis("Horizontal");
-       xvector = xspeed * xdirection * Time.deltaTime;
+        xdirection = Input.GetAxis("Horizontal");
+        xvector = xspeed * xdirection * Time.deltaTime;
         transform.Translate(xvector, 0, 0);
+        if (overworld)
+        {
+            ydirection = Input.GetAxis("Vertical");
+            yvector = yspeed * ydirection * Time.deltaTime;
+            transform.Translate(0, yvector, 0);
+
+        }
+        else
+        {
+            yspeed = 0;
+        }
         // had float on xdirection and xvector
     }
     

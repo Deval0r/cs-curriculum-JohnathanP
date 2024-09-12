@@ -51,14 +51,32 @@ public class PlayerController : MonoBehaviour
         {
             yspeed = 0;
         }
-        // had float on xdirection and xvector
+    
+
     }
-    
+    // had float on xdirection and xvector
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Coin"))
+
+        {
+            Destroy(other.gameObject);
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Wall"))
+
+        {
+            print("we hit wall lol");
+        }
+    }
+
     //for organization, put other built-in Unity functions here
-    
-    
-    
-    
-    
+
+
+
+
+
     //after all Unity functions, your own functions can go here
 }

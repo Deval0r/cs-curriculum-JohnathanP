@@ -11,14 +11,16 @@ public class Coins : MonoBehaviour
     }
 
     // Update is called once per frame
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Coin"))
 
         {
+            Destroy(other.gameObject);
             gm.coins += 1;
             print(gm.coins);
-            Destroy(other.gameObject);
+            
         }
     }
 }

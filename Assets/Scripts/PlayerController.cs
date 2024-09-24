@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     float ydirection;
     float yvector;
 
+
     public bool overworld; 
 
     private void Start()
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
         
         if (overworld)
         {
+            
             GetComponent<Rigidbody2D>().gravityScale = 0f;
         }
         else
@@ -37,6 +39,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        
         xdirection = Input.GetAxis("Horizontal");
         xvector = xspeed * xdirection * Time.deltaTime;
         transform.Translate(xvector, 0, 0);

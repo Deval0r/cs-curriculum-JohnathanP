@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManagerScript : MonoBehaviour
 {
@@ -37,7 +38,16 @@ public class GameManagerScript : MonoBehaviour
             Application.Quit();
 
         }
+
+    
+        if (health < 1)
+        {
+            SceneManager.LoadScene("Start");
+        }
+    
     }
+
+
 
 }
 

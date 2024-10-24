@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TopDown_AnimatorController : MonoBehaviour
 {
+    public float attacking;
+    public float cooldown;
     [SerializeField]
     RuntimeAnimatorController animShovel;
 
@@ -17,6 +19,8 @@ public class TopDown_AnimatorController : MonoBehaviour
 
     private void Start()
     {
+        cooldown = 600;
+        attacking = 0;
         anim = GetComponent<Animator>();
         anim.runtimeAnimatorController = animShovel;
         sprite = GetComponent<SpriteRenderer>();
@@ -30,6 +34,7 @@ public class TopDown_AnimatorController : MonoBehaviour
 
     private void Update()
     {
+        cooldown -= 1;
         if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
         {
             if (Input.GetAxis("Horizontal") != 0 && Input.GetAxis("Vertical") != 0)
@@ -73,10 +78,15 @@ public class TopDown_AnimatorController : MonoBehaviour
         {
             anim.SetBool("IsWalking", false);
         }
-
+        attacking = 0;
         if (Input.GetMouseButton(0))
         {
             anim.SetTrigger("Attack");
+            if (cooldown < 600)
+            { 
+            attacking = 1;
+            
+            }
             anim.SetBool("IsWalking", false);
         }
 

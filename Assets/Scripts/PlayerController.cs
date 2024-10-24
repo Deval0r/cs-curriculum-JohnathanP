@@ -11,7 +11,8 @@ public class PlayerController : MonoBehaviour
     float yspeed;
     float ydirection;
     float yvector;
-
+    public float playerX;
+    public float playerY;
 
     public bool overworld; 
 
@@ -43,11 +44,18 @@ public class PlayerController : MonoBehaviour
         xdirection = Input.GetAxis("Horizontal");
         xvector = xspeed * xdirection * Time.deltaTime;
         transform.Translate(xvector, 0, 0);
+
+
+
         if (overworld)
         {
+            
+
             ydirection = Input.GetAxis("Vertical");
             yvector = yspeed * ydirection * Time.deltaTime;
             transform.Translate(0, yvector, 0);
+            playerX = transform.position.x;
+            playerY = transform.position.y;
 
         }
         else

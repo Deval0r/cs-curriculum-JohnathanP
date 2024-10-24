@@ -7,7 +7,7 @@ public class Coins : MonoBehaviour
 
     void Start()
     {
-        gm = FindObjectOfType<GameManagerScript>();
+        gm = FindFirstObjectByType<GameManagerScript>();
     }
 
     // Update is called once per frame

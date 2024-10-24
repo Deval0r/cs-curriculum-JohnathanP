@@ -5,6 +5,8 @@ using UnityEngine;
 public class TopDown_EnemyAnimator : MonoBehaviour
 {
     public bool IsAttacking { get; private set; }
+    private EnemyScript enemy;
+    private PlayerController playerController;
 
     Vector3 prevPos;
     Animator anim;
@@ -13,6 +15,8 @@ public class TopDown_EnemyAnimator : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+        enemy = FindFirstObjectByType<EnemyScript>();
+        
     }
 
     // Update is called once per frame
@@ -45,7 +49,7 @@ public class TopDown_EnemyAnimator : MonoBehaviour
 
         prevPos = transform.position;
 
-        if (Input.GetMouseButton(0))
+        if (enemy.state==3)
         {
             Attack();
         }

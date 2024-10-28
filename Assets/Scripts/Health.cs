@@ -32,7 +32,7 @@ public class Health : MonoBehaviour
         if (other.gameObject.CompareTag("Spikes"))
 
         {
-            gm.health -= 1;
+            gm.health -= 2;
 
             print(gm.health);
 

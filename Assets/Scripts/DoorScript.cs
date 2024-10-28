@@ -1,25 +1,23 @@
 using UnityEngine;
 
-public class Coins : MonoBehaviour
+public class DoorScript : MonoBehaviour
 {
-    GameManagerScript gm;
+    PlayerController playerController;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     void Start()
     {
-        gm = FindFirstObjectByType<GameManagerScript>();
+        playerController = FindFirstObjectByType<PlayerController>();
     }
 
     // Update is called once per frame
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Coin"))
+        if ((other.gameObject.CompareTag("Player")) && (playerController.hasAxe==1))
 
         {
-            Destroy(other.gameObject);
-            gm.coins += 1;
-            print(gm.coins);
+            Destroy(this.gameObject);
 
         }
     }

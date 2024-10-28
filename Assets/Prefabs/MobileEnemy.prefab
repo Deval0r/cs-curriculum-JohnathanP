@@ -120,13 +120,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9476301d374aa4e91b87bb44cc37deae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {x: 0, y: 0, z: 0}
-  current: {x: 0, y: 0, z: 0}
-  direction: {x: 0, y: 0, z: 0}
-  playerController: {fileID: 0}
-  distance: 0
   state: 0
-  changetime: 0
+  health: 0
+  AxeItem: {fileID: 8928701524657299959, guid: 2d2bc4cf5fda5c740b9cedcdbc7c87ac, type: 3}
 --- !u!1 &6074370204116875197
 GameObject:
   m_ObjectHideFlags: 0

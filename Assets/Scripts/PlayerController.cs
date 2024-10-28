@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     float yvector;
     public float playerX;
     public float playerY;
+    public int hasAxe;
 
     public bool overworld; 
 
@@ -26,7 +27,7 @@ public class PlayerController : MonoBehaviour
         yspeed = 4;
         ydirection = 0;
         yvector = 0;
-        
+        hasAxe = 0;
         if (overworld)
         {
             

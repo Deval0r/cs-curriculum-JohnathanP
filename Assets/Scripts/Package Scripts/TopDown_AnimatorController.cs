@@ -17,8 +17,11 @@ public class TopDown_AnimatorController : MonoBehaviour
     Animator anim;
     SpriteRenderer sprite;
 
+    public PlayerController playerController;
+
     private void Start()
     {
+        playerController = FindFirstObjectByType<PlayerController>();
         cooldown = 600;
         attacking = 0;
         anim = GetComponent<Animator>();
@@ -34,6 +37,10 @@ public class TopDown_AnimatorController : MonoBehaviour
 
     private void Update()
     {
+        if (playerController.hasAxe==1)
+        {
+            SwitchToAxe();
+        }
         cooldown -= 1;
         if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
         {
@@ -95,6 +102,7 @@ public class TopDown_AnimatorController : MonoBehaviour
     }
 
     // Call this function when the player picks up the axe.
+    
     public void SwitchToAxe()
     {
         anim.runtimeAnimatorController = animAxe;

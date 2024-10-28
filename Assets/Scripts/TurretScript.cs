@@ -23,7 +23,7 @@ public class TurretScript : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && (cool < 1))
         {
             cool = 60;
-            Instantiate(projectilePrefab,spawnPos, Quaternion.identity);
+            Instantiate(projectilePrefab, spawnPos, Quaternion.identity);
 
             ProjectileScript Script = projectilePrefab.GetComponent<ProjectileScript>();
            

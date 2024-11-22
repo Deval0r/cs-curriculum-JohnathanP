@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class DoorScript : MonoBehaviour
 {
     PlayerController playerController;
@@ -18,7 +18,7 @@ public class DoorScript : MonoBehaviour
 
         {
             Destroy(this.gameObject);
-
+            SceneManager.LoadScene("Platformer");
         }
     }
 }

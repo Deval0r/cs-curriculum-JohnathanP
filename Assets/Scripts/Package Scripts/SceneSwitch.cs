@@ -18,6 +18,7 @@ public class SceneSwitch : MonoBehaviour
 
     private void Start()
     {
+        
         currentScene = SceneManager.GetActiveScene().buildIndex;
         player = GameObject.FindWithTag("Player");
 
@@ -59,6 +60,7 @@ public class SceneSwitch : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+
             sceneSwitchedFrom = currentScene;
             playerAnimator = player.GetComponentInChildren<Animator>().runtimeAnimatorController;
             SceneManager.LoadScene(scene);

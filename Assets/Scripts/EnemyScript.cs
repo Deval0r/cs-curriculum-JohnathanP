@@ -21,6 +21,7 @@ public class EnemyScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        
         spawnPos = new Vector3(transform.position.x, transform.position.y, 0);
         health = 3;
         animScript= FindFirstObjectByType<TopDown_AnimatorController>();
@@ -36,6 +37,7 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         spawnPos = new Vector3(transform.position.x + Random.Range(-1.5f,1.5f), transform.position.y + Random.Range(-1.5f, 1.5f), 0);
 
         distance = Vector3.Distance(gameObject.transform.position, target);

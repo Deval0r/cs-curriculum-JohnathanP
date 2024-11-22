@@ -37,6 +37,15 @@ public class Health : MonoBehaviour
             print(gm.health);
 
         }
+
+        if (other.gameObject.CompareTag("Enemy"))
+
+        {
+            gm.health -= 100;
+
+            print(gm.health);
+
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -51,6 +60,8 @@ public class Health : MonoBehaviour
             Destroy(other.gameObject);
 
         }
+
+
     }
 }
 

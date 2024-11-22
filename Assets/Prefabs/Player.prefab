@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8817025345248629567}
   - component: {fileID: 1283610988072705179}
   - component: {fileID: 7869803674047299266}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,8 +136,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63f52f1c934da4613a15cf68f3b0f562, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attacking: 0
+  cooldown: 0
   animShovel: {fileID: 9100000, guid: 1ccf3beb0c6f246e99cc9a927f1fd12e, type: 2}
   animAxe: {fileID: 9100000, guid: 8cf1007ae09a548dfb24a581133c15db, type: 2}
+  playerController: {fileID: 0}
 --- !u!1 &8049566408774423969
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,7 +156,8 @@ GameObject:
   - component: {fileID: 5776188219004472883}
   - component: {fileID: 3558215853919282026}
   - component: {fileID: 5323985223908492332}
-  m_Layer: 0
+  - component: {fileID: 7316244070125671420}
+  m_Layer: 2
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -261,6 +265,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc6dd32abcac042189a319a30dc194bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerX: 0
+  playerY: 0
+  hasAxe: 0
   overworld: 1
 --- !u!114 &5776188219004472883
 MonoBehaviour:
@@ -288,6 +295,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coins: 0
   health: 0
+  coinsText: {fileID: 0}
+  healthText: {fileID: 0}
 --- !u!114 &5323985223908492332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,3 +309,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7451b4bcbb3f6458ba9e750811f32f1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7316244070125671420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8049566408774423969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 175a24761a67b41db8c96feed9abccba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  length: 0
+  jump: 0

@@ -49,7 +49,7 @@ public class TopDown_EnemyAnimator : MonoBehaviour
 
         prevPos = transform.position;
 
-        if (enemy.state==3)
+        if (enemy.state == 3)
         {
             Attack();
         }

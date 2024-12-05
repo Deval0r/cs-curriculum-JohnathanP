@@ -15,9 +15,10 @@ public class LeverController : MonoBehaviour
             nearestDoor.ToggleDoor();  // Activate the nearest door
             isActivated = false;  // Reset activation state to prevent immediate toggle
         }
+        
     }
 
-    private void OnTriggerEnter(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && nearestDoor != null)
         {
@@ -25,10 +26,13 @@ public class LeverController : MonoBehaviour
             isActivated = true;
             print("LEVER LEVER LEVER");
         }
-
+        if (other.CompareTag("Player"))
+        {
+            print("LEVER LEVER LEVER");
+        }
     }
 
-    private void OnTriggerExit(Collider2D other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {

@@ -4,12 +4,13 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     GameManagerScript gm;
+    PlatScript plat;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     void Start()
     {
         gm = FindFirstObjectByType<GameManagerScript>();
-       
+        plat  = GetComponent<PlatScript>();
         gm.health = 25;
     }
 
@@ -37,8 +38,8 @@ public class Health : MonoBehaviour
             print(gm.health);
 
         }
-
-        if (other.gameObject.CompareTag("Enemy"))
+        
+        if (other.gameObject.CompareTag("Enemy") && (plat != null))
 
         {
             gm.health -= 100;

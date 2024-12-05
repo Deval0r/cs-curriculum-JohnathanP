@@ -14,7 +14,7 @@ public class DoorController : MonoBehaviour
         closedPosition = transform.position;
 
         // Automatically calculate open position (adjust as necessary)
-        openPosition = transform.position + transform.forward * 5f;  // 5 units forward (adjust this for your needs)
+        openPosition = transform.position + Vector3.up * 1.5f; //5f // 5 units forward (adjust this for your needs)
     }
 
     private void Update()

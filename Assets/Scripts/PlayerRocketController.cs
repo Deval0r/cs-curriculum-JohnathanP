@@ -10,16 +10,18 @@ public class PlayerRocketController : MonoBehaviour
     private Rigidbody2D rb;
     private bool usingRocket = false;
     private float currentRocketForce = 0f;
+    PlatScript platscript;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        platscript = GetComponent<PlatScript>();
     }
 
     private void Update()
     {
         // Activate rocket power when the player presses a key (e.g., space)
-        if (Input.GetKeyDown(KeyCode.Space) && rocketCount > 0 && !usingRocket)
+        if (Input.GetKeyDown(KeyCode.Space) && rocketCount > 0 && !usingRocket && platscript.canJump == 0)
         {
             usingRocket = true;
             currentRocketForce = initialRocketForce;

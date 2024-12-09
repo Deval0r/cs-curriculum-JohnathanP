@@ -8,6 +8,7 @@ public class PlatScript : MonoBehaviour
     public int jump;
     public float playerX;
     public float playerY;
+    public int canJump;
     void Start()
     {
         jump = 0;
@@ -47,5 +48,11 @@ public class PlatScript : MonoBehaviour
             // If the ray hits something and the player presses jump, apply the jump force
             rb.AddForce(Vector2.up * 350); // Jump force
         }
+
+        if (leftRay.collider != null || rightRay.collider != null)
+        {
+            canJump = 1;
+        }
+        else canJump = 0;
     }
 }
